@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- font families -->
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+    <!-------------------->
+    
+    <link rel="stylesheet" href="styles.css">
+    <title>Jarisse's Diary</title>
+</head>
+<body>
+
+    <div class="title-container">
+        <h2>Welcome to</h2>
+        <h1>Jarisse's Diary</h1>
+    </div>
+
+    <div class="container">
+        <div class="container">
+            <div class="button-container">
+                <a href="about.html" class="image-button">
+                    <img src="images/catbun.png" alt="Button 1">
+                </a>
+                <span class="caption">about me</span>
+            </div>
+            <div class="button-container">
+                <a href="projects.html" class="image-button">
+                    <img src="images/orangecatbun.png" alt="Button 2">
+                </a>
+                <span class="caption">projects</span>
+            </div>
+            <div class="button-container">
+                <a href="contact.html" class="image-button">
+                    <img src="images/whitecatbun.png" alt="Button 3">
+                </a>
+                <span class="caption">contact</span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        fetch("http://127.0.0.1:5000/message")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("message").innerText = data.message;
+            })
+            .catch(error => {
+                console.error("Error fetching message:", error);
+            });
+    </script>
+</body>
+</html>
